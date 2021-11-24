@@ -1,0 +1,9 @@
+/* PHASE 0: Sidebar */
+
+.profile-picture img{
+    display: block;
+    margin-top: -125px;
+    position: relative;
+    border-radius: 8px;
+    border :1px solid black;
+}
