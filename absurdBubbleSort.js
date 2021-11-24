@@ -28,21 +28,20 @@ function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop){
             innerBubbleSortLoop(arr, i+1, madeAnySwaps, outerBubbleSortLoop);
         });
     } else if (i == arr.length - 1){
-        debugger
+        madeAnySwaps = false;
         outerBubbleSortLoop(madeAnySwaps);
     }
 }
 
 function absurdBubbleSort(arr, sortCompletionCallback) {
-    outerBubbleSortLoop(true);
-
     function outerBubbleSortLoop(madeAnySwaps){
         if (madeAnySwaps == true){
-            innerBubbleSortLoop(arr, 0, false, outerBubbleSortLoop());
+            innerBubbleSortLoop(arr, 0, false, outerBubbleSortLoop(false));
         } else{
             sortCompletionCallback(arr);
         }
     }
+    outerBubbleSortLoop(true);
 }
 
 
